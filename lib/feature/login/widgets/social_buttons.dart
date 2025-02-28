@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import AppLocalizations
 
 import '../../../shared/components/custom_buttons.dart';
 import '../cubit/login_cubit.dart';
@@ -9,9 +10,12 @@ class SocialLoginButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations =
+        AppLocalizations.of(context)!; // Get AppLocalizations instance
+
     return Column(
       children: [
-        const Text("Or"),
+        Text(localizations.or), // Use localized text
         const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -19,7 +23,7 @@ class SocialLoginButtons extends StatelessWidget {
             Expanded(
               child: CustomButton(
                 icon: Icons.g_mobiledata,
-                label: "GOOGLE",
+                label: localizations.google, // Use localized text
                 onPressed: () {
                   context.read<LoginCubit>().loginWithGoogle();
                 },
@@ -29,7 +33,7 @@ class SocialLoginButtons extends StatelessWidget {
             Expanded(
               child: CustomButton(
                 icon: Icons.apple,
-                label: "APPLE",
+                label: localizations.apple, // Use localized text
                 onPressed: () {},
               ),
             ),

@@ -30,5 +30,8 @@
     "alreadyHaveAccount": "Já tem uma conta? Entrar",
     "rememberMe": "Lembrar-me",
     "forgotPassword": "Esqueceu a senha?",
-    "signUpPrompt": "Não tem uma conta? Cadastre-se"
+    "signUpPrompt": "Não tem uma conta? Cadastre-se",
+    "or": "Ou",
+    "google": "GOOGLE",
+    "apple": "APPLE"
 }
