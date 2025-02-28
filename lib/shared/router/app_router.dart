@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../../feature/forget_password/forget_password_page.dart';
 import '../../feature/home/home_page.dart';
 import '../../feature/login/login_page.dart';
 
@@ -12,6 +13,10 @@ mixin AppRouter {
     GoRoute(
       path: '/home',
       builder: (context, state) => const HomePage(),
+    ),
+    GoRoute(
+      path: '/forget-password',
+      builder: (context, state) => const ForgetPasswordPage(),
     ),
   ]);
 }

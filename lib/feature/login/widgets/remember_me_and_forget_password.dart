@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class RememberMeAndForgotPassword extends StatelessWidget {
   const RememberMeAndForgotPassword({
@@ -24,10 +25,13 @@ class RememberMeAndForgotPassword extends StatelessWidget {
             const Text("Remember me"),
           ],
         ),
-        Text(
-          "Forgot password?",
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.secondary,
+        GestureDetector(
+          onTap: () => context.push("/forget-password"),
+          child: Text(
+            "Forgot password?",
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.secondary,
+            ),
           ),
         ),
       ],
