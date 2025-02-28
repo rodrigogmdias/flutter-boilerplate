@@ -1,24 +1,9 @@
 {
   "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "The conventional newborn programmer greeting"
-  },
   "myApp": "My App",
-  "@myApp": {
-    "description": "App title"
-  },
-  "email": "Email",
-  "@email": {
-    "description": "Email field text"
-  },
+  "email": "E-mail",
   "password": "Password",
-  "@password": {
-    "description": "Password field text"
-  },
   "login": "LOGIN",
-  "@login": {
-    "description": "Login button text"
-  },
   "forgotPassword": "Forgot Password",
   "enterEmailToResetPassword": "Enter your email to reset your password",
   "resetPassword": "RESET PASSWORD",
