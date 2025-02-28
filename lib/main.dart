@@ -1,9 +1,9 @@
-import 'package:boilerplate/constants.dart';
-import 'package:boilerplate/shared/router/app_router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'firebase_options.dart';
+import 'shared/router/app_router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

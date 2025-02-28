@@ -1,6 +1,6 @@
-import 'package:boilerplate/feature/home/home_page.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../feature/home/home_page.dart';
 import '../../feature/login/login_page.dart';
 
 mixin AppRouter {
