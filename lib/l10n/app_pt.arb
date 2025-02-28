@@ -2,5 +2,33 @@
     "helloWorld": "Olá Mundo!",
     "@helloWorld": {
         "description": "A saudação convencional do programador recém-nascido"
-    }
+    },
+    "myApp": "Meu Aplicativo",
+    "@myApp": {
+        "description": "Título do aplicativo"
+    },
+    "email": "Email",
+    "@email": {
+        "description": "Texto do campo de email"
+    },
+    "password": "Senha",
+    "@password": {
+        "description": "Texto do campo de senha"
+    },
+    "login": "ENTRAR",
+    "@login": {
+        "description": "Texto do botão de login"
+    },
+    "forgotPassword": "Esqueceu a Senha",
+    "enterEmailToResetPassword": "Digite seu e-mail para redefinir sua senha",
+    "email": "E-mail",
+    "resetPassword": "REDEFINIR SENHA",
+    "backToLogin": "Voltar para o Login",
+    "signUp": "Inscrever-se",
+    "createNewAccount": "Criar uma nova conta",
+    "fullName": "Nome completo",
+    "alreadyHaveAccount": "Já tem uma conta? Entrar",
+    "rememberMe": "Lembrar-me",
+    "forgotPassword": "Esqueceu a senha?",
+    "signUpPrompt": "Não tem uma conta? Cadastre-se"
 }

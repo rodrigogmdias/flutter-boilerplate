@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import AppLocalizations
 
 import '../../shared/components/custom_buttons.dart';
 import '../../shared/components/custom_text_field.dart';
@@ -12,7 +13,8 @@ class ForgetPasswordPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Forgot Password"),
+        title: Text(AppLocalizations.of(context)!
+            .forgotPassword), // Use AppLocalizations
       ),
       body: Center(
         child: Padding(
@@ -22,24 +24,30 @@ class ForgetPasswordPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Enter your email to reset your password",
+                AppLocalizations.of(context)!
+                    .enterEmailToResetPassword, // Use AppLocalizations
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 20),
               CustomTextField(
                 controller: emailController,
-                hintText: "Email",
+                hintText:
+                    AppLocalizations.of(context)!.email, // Use AppLocalizations
                 icon: Icons.email,
-                keyboardType:
-                    TextInputType.emailAddress, // Adicionado tipo de teclado
+                keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 20),
-              CustomButton(label: "RESET PASSWORD", onPressed: () {}),
+              CustomButton(
+                label: AppLocalizations.of(context)!
+                    .resetPassword, // Use AppLocalizations
+                onPressed: () {},
+              ),
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Back to Login"),
+                child: Text(AppLocalizations.of(context)!
+                    .backToLogin), // Use AppLocalizations
               ),
             ],
           ),

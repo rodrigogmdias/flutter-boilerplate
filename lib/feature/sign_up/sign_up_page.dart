@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'; // Import AppLocalizations
 
 import '../../shared/components/custom_buttons.dart';
 import '../../shared/components/custom_text_field.dart';
@@ -14,7 +15,8 @@ class SignUpPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Sign Up"),
+        title:
+            Text(AppLocalizations.of(context)!.signUp), // Use AppLocalizations
       ),
       body: Center(
         child: Padding(
@@ -24,38 +26,44 @@ class SignUpPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "Create a new account",
+                AppLocalizations.of(context)!
+                    .createNewAccount, // Use AppLocalizations
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 20),
               CustomTextField(
                 controller: fullNameController,
-                hintText: "Full Name",
+                hintText: AppLocalizations.of(context)!
+                    .fullName, // Use AppLocalizations
                 icon: Icons.person,
               ),
               const SizedBox(height: 20),
               CustomTextField(
                 controller: emailController,
-                hintText: "Email",
+                hintText:
+                    AppLocalizations.of(context)!.email, // Use AppLocalizations
                 icon: Icons.email,
               ),
               const SizedBox(height: 20),
               CustomTextField(
                 controller: passwordController,
-                hintText: "Password",
+                hintText: AppLocalizations.of(context)!
+                    .password, // Use AppLocalizations
                 icon: Icons.lock,
                 obscureText: true,
               ),
               const SizedBox(height: 20),
               CustomButton(
-                label: "SIGN UP",
+                label: AppLocalizations.of(context)!
+                    .signUp, // Use AppLocalizations
                 onPressed: () {},
               ),
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Already have an account? Log in"),
+                child: Text(AppLocalizations.of(context)!
+                    .alreadyHaveAccount), // Use AppLocalizations
               ),
             ],
           ),

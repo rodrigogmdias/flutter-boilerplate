@@ -2,5 +2,32 @@
   "helloWorld": "Hello World!",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
-  }
+  },
+  "myApp": "My App",
+  "@myApp": {
+    "description": "App title"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email field text"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password field text"
+  },
+  "login": "LOGIN",
+  "@login": {
+    "description": "Login button text"
+  },
+  "forgotPassword": "Forgot Password",
+  "enterEmailToResetPassword": "Enter your email to reset your password",
+  "resetPassword": "RESET PASSWORD",
+  "backToLogin": "Back to Login",
+  "signUp": "Sign Up",
+  "createNewAccount": "Create a new account",
+  "fullName": "Full Name",
+  "alreadyHaveAccount": "Already have an account? Log in",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password?",
+  "signUpPrompt": "Don't have an account? Sign Up"
 }

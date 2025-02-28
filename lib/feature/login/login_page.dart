@@ -1,6 +1,7 @@
 import 'package:boilerplate/feature/login/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../shared/components/custom_buttons.dart';
@@ -43,21 +44,20 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "My App",
+                      AppLocalizations.of(context)!.myApp,
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 30),
                     CustomTextField(
                       controller: emailController,
-                      hintText: "Email",
+                      hintText: AppLocalizations.of(context)!.email,
                       icon: Icons.email,
-                      keyboardType: TextInputType
-                          .emailAddress, // Adicionado tipo de teclado
+                      keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 20),
                     CustomTextField(
                       controller: passwordController,
-                      hintText: "Password",
+                      hintText: AppLocalizations.of(context)!.password,
                       icon: Icons.lock,
                       obscureText: true,
                     ),
@@ -70,7 +70,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     CustomButton(
-                      label: "LOGIN",
+                      label: AppLocalizations.of(context)!.login,
                       onPressed: () => context.read<LoginCubit>().login(
                             emailController.text,
                             passwordController.text,

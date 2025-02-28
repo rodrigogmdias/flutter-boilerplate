@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class SignUpText extends StatelessWidget {
@@ -11,7 +12,7 @@ class SignUpText extends StatelessWidget {
         context.push('/sign-up');
       },
       child: Text(
-        "Don't have an account? Sign Up",
+        AppLocalizations.of(context)!.signUpPrompt,
         style: TextStyle(color: Theme.of(context).colorScheme.secondary),
       ),
     );

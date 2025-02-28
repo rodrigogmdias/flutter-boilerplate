@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class RememberMeAndForgotPassword extends StatelessWidget {
@@ -13,6 +14,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -22,13 +24,13 @@ class RememberMeAndForgotPassword extends StatelessWidget {
               value: rememberChecked,
               onChanged: onChanged,
             ),
-            const Text("Remember me"),
+            Text(localizations.rememberMe),
           ],
         ),
         GestureDetector(
           onTap: () => context.push("/forget-password"),
           child: Text(
-            "Forgot password?",
+            localizations.forgotPassword,
             style: TextStyle(
               color: Theme.of(context).colorScheme.secondary,
             ),
