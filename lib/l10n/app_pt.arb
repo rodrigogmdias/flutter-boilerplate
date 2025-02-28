@@ -8,9 +8,9 @@
     "enterEmailToResetPassword": "Digite seu e-mail para redefinir sua senha",
     "resetPassword": "REDEFINIR SENHA",
     "backToLogin": "Voltar para o Login",
-    "signUp": "Inscrever-se",
+    "signUp": "Cadastrar",
     "createNewAccount": "Criar uma nova conta",
-    "fullName": "Nome completo",
+    "fullName": "Nome Completo",
     "alreadyHaveAccount": "Já tem uma conta? Entrar",
     "rememberMe": "Lembrar-me",
     "forgotPassword": "Esqueceu a senha?",
@@ -18,5 +18,9 @@
     "or": "Ou",
     "google": "GOOGLE",
     "apple": "APPLE",
-    "resetPasswordEmailSent": "E-mail de redefinição de senha enviado"
+    "resetPasswordEmailSent": "E-mail de redefinição de senha enviado",
+    "confirmPassword": "Confirmar Senha",
+    "passwordsDoNotMatch": "As senhas não coincidem",
+    "fieldRequired": "Este campo é obrigatório",
+    "signUpSuccess": "Cadastro realizado com sucesso!"
 }

@@ -18,5 +18,10 @@
   "or": "Or",
   "google": "GOOGLE",
   "apple": "APPLE",
-  "resetPasswordEmailSent": "Reset password email sent"
+  "resetPasswordEmailSent": "Reset password email sent",
+  "confirmPassword": "Confirm Password",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "fieldRequired": "This field is required",
+  "signUpSuccess": "Sign up successful!",
+  "alreadyHaveAccount": "Already have an account? Sign in"
 }

@@ -9,6 +9,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
@@ -18,6 +20,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Text(AppLocalizations.of(context)!.helloWorld),
+            if (user != null) Text(user.displayName ?? 'User'),
             const SizedBox(height: 20),
             CustomButton(
               label: "Logout",

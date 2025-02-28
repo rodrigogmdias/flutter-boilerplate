@@ -23,7 +23,7 @@ class ForgetPasswordPage extends StatelessWidget {
               SnackBar(
                 content: Text(
                   AppLocalizations.of(context)!.resetPasswordEmailSent,
-                ), // Use AppLocalizations
+                ),
               ),
             );
             return false;
@@ -42,8 +42,7 @@ class ForgetPasswordPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
-              title: Text(AppLocalizations.of(context)!
-                  .forgotPassword), // Use AppLocalizations
+              title: Text(AppLocalizations.of(context)!.forgotPassword),
             ),
             body: Center(
               child: Padding(
@@ -53,23 +52,20 @@ class ForgetPasswordPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!
-                          .enterEmailToResetPassword, // Use AppLocalizations
+                      AppLocalizations.of(context)!.enterEmailToResetPassword,
                       textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     const SizedBox(height: 20),
                     CustomTextField(
                       controller: emailController,
-                      hintText: AppLocalizations.of(context)!
-                          .email, // Use AppLocalizations
+                      hintText: AppLocalizations.of(context)!.email,
                       icon: Icons.email,
                       keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 20),
                     CustomButton(
-                      label: AppLocalizations.of(context)!
-                          .resetPassword, // Use AppLocalizations
+                      label: AppLocalizations.of(context)!.resetPassword,
                       onPressed: () {
                         context.read<ForgetPasswordCubit>().resetPassword(
                               emailController.text,
@@ -79,8 +75,7 @@ class ForgetPasswordPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: Text(AppLocalizations.of(context)!
-                          .backToLogin), // Use AppLocalizations
+                      child: Text(AppLocalizations.of(context)!.backToLogin),
                     ),
                   ],
                 ),

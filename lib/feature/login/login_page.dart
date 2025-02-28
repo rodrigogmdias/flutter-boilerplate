@@ -19,7 +19,7 @@ class LoginPage extends StatelessWidget {
     final passwordController = TextEditingController();
 
     return BlocProvider(
-      create: (context) => LoginCubit()..checkLogin(),
+      create: (context) => LoginCubit(),
       child: BlocBuilder<LoginCubit, LoginState>(
         buildWhen: (previous, current) {
           if (current is LoginError) {
