@@ -4,9 +4,11 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final bool obscureText;
+  final TextEditingController controller;
 
   const CustomTextField({
     super.key,
+    required this.controller,
     required this.hintText,
     required this.icon,
     this.obscureText = false,
@@ -15,6 +17,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,

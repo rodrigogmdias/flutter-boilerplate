@@ -8,6 +8,8 @@ class ForgetPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Forgot Password"),
@@ -25,7 +27,11 @@ class ForgetPasswordPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 20),
-              const CustomTextField(hintText: "Email", icon: Icons.email),
+              CustomTextField(
+                controller: emailController,
+                hintText: "Email",
+                icon: Icons.email,
+              ),
               const SizedBox(height: 20),
               CustomButton(label: "RESET PASSWORD", onPressed: () {}),
               const SizedBox(height: 20),

@@ -8,6 +8,10 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController fullNameController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Sign Up"),
@@ -25,17 +29,20 @@ class SignUpPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 20),
-              const CustomTextField(
+              CustomTextField(
+                controller: fullNameController,
                 hintText: "Full Name",
                 icon: Icons.person,
               ),
               const SizedBox(height: 20),
-              const CustomTextField(
+              CustomTextField(
+                controller: emailController,
                 hintText: "Email",
                 icon: Icons.email,
               ),
               const SizedBox(height: 20),
-              const CustomTextField(
+              CustomTextField(
+                controller: passwordController,
                 hintText: "Password",
                 icon: Icons.lock,
                 obscureText: true,

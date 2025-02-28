@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../shared/components/custom_buttons.dart';
+import '../cubit/login_cubit.dart';
 
 class SocialLoginButtons extends StatelessWidget {
   const SocialLoginButtons({super.key});
@@ -18,7 +20,9 @@ class SocialLoginButtons extends StatelessWidget {
               child: CustomButton(
                 icon: Icons.g_mobiledata,
                 label: "GOOGLE",
-                onPressed: () {},
+                onPressed: () {
+                  context.read<LoginCubit>().loginWithGoogle();
+                },
               ),
             ),
             const SizedBox(width: 10),

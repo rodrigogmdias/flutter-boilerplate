@@ -14,10 +14,28 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+
     return BlocProvider(
-      create: (context) => LoginCubit(),
+      create: (context) => LoginCubit()..checkLogin(),
       child: BlocBuilder<LoginCubit, LoginState>(
+        buildWhen: (previous, current) {
+          if (current is LoginError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(current.error),
+              ),
+            );
+            return false;
+          }
+          return true;
+        },
         builder: (context, state) {
+          if (state is LoginSuccess) {
+            context.go("/home");
+          }
+
           return Scaffold(
             body: Center(
               child: Padding(
@@ -30,12 +48,14 @@ class LoginPage extends StatelessWidget {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 30),
-                    const CustomTextField(
+                    CustomTextField(
+                      controller: emailController,
                       hintText: "Email",
                       icon: Icons.email,
                     ),
                     const SizedBox(height: 20),
-                    const CustomTextField(
+                    CustomTextField(
+                      controller: passwordController,
                       hintText: "Password",
                       icon: Icons.lock,
                       obscureText: true,
@@ -50,7 +70,10 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     CustomButton(
                       label: "LOGIN",
-                      onPressed: () => context.go("/home"),
+                      onPressed: () => context.read<LoginCubit>().login(
+                            emailController.text,
+                            passwordController.text,
+                          ),
                     ),
                     const SizedBox(height: 20),
                     const SocialLoginButtons(),
