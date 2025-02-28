@@ -31,6 +31,8 @@ class ForgetPasswordPage extends StatelessWidget {
                 controller: emailController,
                 hintText: "Email",
                 icon: Icons.email,
+                keyboardType:
+                    TextInputType.emailAddress, // Adicionado tipo de teclado
               ),
               const SizedBox(height: 20),
               CustomButton(label: "RESET PASSWORD", onPressed: () {}),
