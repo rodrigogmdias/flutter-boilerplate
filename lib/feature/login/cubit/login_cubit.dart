@@ -34,46 +34,38 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void login(String email, String password) {
-    try {
-      FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: email, password: password)
-          .then((value) {
-        emit(const LoginSuccess());
-      }).catchError((error) {
-        if (error is FirebaseAuthException) {
-          emit(LoginError(error.message ?? "An error occurred"));
-        } else {
-          emit(const LoginError("An error occurred"));
-        }
-      });
-    } catch (error) {
-      emit(const LoginError("An error occurred"));
-    }
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(email: email, password: password)
+        .then((value) {
+      emit(const LoginSuccess());
+    }).catchError((error) {
+      if (error is FirebaseAuthException) {
+        emit(LoginError(error.message ?? "An error occurred"));
+      } else {
+        emit(const LoginError("An error occurred"));
+      }
+    });
   }
 
   void loginWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
-      final GoogleSignInAuthentication? googleAuth =
-          await googleUser?.authentication;
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
 
-      final credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth?.accessToken,
-        idToken: googleAuth?.idToken,
-      );
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
 
-      FirebaseAuth.instance.signInWithCredential(credential).then((value) {
-        emit(const LoginSuccess());
-      }).catchError((error) {
-        if (error is FirebaseAuthException) {
-          emit(LoginError(error.message ?? "An error occurred"));
-        } else {
-          emit(const LoginError("An error occurred"));
-        }
-      });
-    } catch (error) {
-      emit(const LoginError("An error occurred"));
-    }
+    FirebaseAuth.instance.signInWithCredential(credential).then((value) {
+      emit(const LoginSuccess());
+    }).catchError((error) {
+      if (error is FirebaseAuthException) {
+        emit(LoginError(error.message ?? "An error occurred"));
+      } else {
+        emit(const LoginError("An error occurred"));
+      }
+    });
   }
 }
