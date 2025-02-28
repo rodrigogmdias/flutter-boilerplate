@@ -17,5 +17,6 @@
   "signUpPrompt": "Don't have an account? Sign Up",
   "or": "Or",
   "google": "GOOGLE",
-  "apple": "APPLE"
+  "apple": "APPLE",
+  "resetPasswordEmailSent": "Reset password email sent"
 }

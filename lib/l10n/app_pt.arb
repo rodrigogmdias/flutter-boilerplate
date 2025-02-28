@@ -17,5 +17,6 @@
     "signUpPrompt": "Não tem uma conta? Cadastre-se",
     "or": "Ou",
     "google": "GOOGLE",
-    "apple": "APPLE"
+    "apple": "APPLE",
+    "resetPasswordEmailSent": "E-mail de redefinição de senha enviado"
 }
