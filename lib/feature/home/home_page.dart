@@ -1,4 +1,5 @@
 import 'package:boilerplate/shared/components/custom_buttons.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -19,7 +20,10 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 20),
             CustomButton(
               label: "Logout",
-              onPressed: () => context.go('/'),
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                context.go('/');
+              },
             ),
           ],
         ),

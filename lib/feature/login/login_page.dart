@@ -28,14 +28,13 @@ class LoginPage extends StatelessWidget {
               ),
             );
             return false;
+          } else if (current is LoginSuccess) {
+            context.go('/home');
+            return false;
           }
           return true;
         },
         builder: (context, state) {
-          if (state is LoginSuccess) {
-            context.go("/home");
-          }
-
           return Scaffold(
             body: Center(
               child: Padding(

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -8,18 +10,27 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(const LoginInitial());
 
+  StreamSubscription? _authStateChanges;
+
   void rememberMe(bool value) {
     emit(LoginInitial(rememberChecked: value));
   }
 
   void checkLogin() {
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+    _authStateChanges =
+        FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user != null) {
         emit(const LoginSuccess());
       } else {
         emit(const LoginInitial());
       }
     });
+  }
+
+  @override
+  Future<void> close() {
+    _authStateChanges?.cancel();
+    return super.close();
   }
 
   void login(String email, String password) {
