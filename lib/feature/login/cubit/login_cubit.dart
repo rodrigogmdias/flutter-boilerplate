@@ -21,6 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void login(String email, String password) {
+    emit(LoginLoading(state.rememberChecked));
     FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) {
@@ -35,6 +36,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void loginWithGoogle() async {
+    emit(LoginLoading(state.rememberChecked));
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
 
     final GoogleSignInAuthentication? googleAuth =

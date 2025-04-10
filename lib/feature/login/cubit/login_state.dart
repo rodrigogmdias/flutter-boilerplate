@@ -10,6 +10,10 @@ final class LoginInitial extends LoginState {
   const LoginInitial({bool rememberChecked = false}) : super(rememberChecked);
 }
 
+final class LoginLoading extends LoginState {
+  const LoginLoading(bool rememberChecked) : super(rememberChecked);
+}
+
 final class LoginSuccess extends LoginState {
   const LoginSuccess() : super(false);
 }
