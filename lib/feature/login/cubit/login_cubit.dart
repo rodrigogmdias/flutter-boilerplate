@@ -37,24 +37,34 @@ class LoginCubit extends Cubit<LoginState> {
 
   void loginWithGoogle() async {
     emit(LoginLoading(state.rememberChecked));
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
-
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
-
-    FirebaseAuth.instance.signInWithCredential(credential).then((value) {
-      emit(const LoginSuccess());
-    }).catchError((error) {
-      if (error is FirebaseAuthException) {
-        emit(LoginError(error.message ?? "An error occurred"));
-      } else {
-        emit(const LoginError("An error occurred"));
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      
+      // Se o usuário cancelou o login, retorna ao estado inicial
+      if (googleUser == null) {
+        emit(LoginInitial(rememberChecked: state.rememberChecked));
+        return;
       }
-    });
+
+      final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      await FirebaseAuth.instance.signInWithCredential(credential)
+        .then((value) {
+          emit(const LoginSuccess());
+        }).catchError((error) {
+          if (error is FirebaseAuthException) {
+            emit(LoginError(error.message ?? "An error occurred"));
+          } else {
+            emit(const LoginError("An error occurred"));
+          }
+        });
+    } catch (error) {
+      emit(LoginError(error.toString()));
+    }
   }
 }
